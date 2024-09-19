@@ -1,0 +1,63 @@
+{
+  "prettier.enable": false,
+  "eslint.enable": false,
+  "biome.enabled": true,
+  "editor.defaultFormatter": "dprint.dprint",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "quickfix.biome": "explicit"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "explorer.fileNesting.patterns": {
+    "*.mist.css": "${capture}.mist.*"
+  },
+  "unocss.include": ["src/**/*.css"],
+  "[javascript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[csv]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  }
+}

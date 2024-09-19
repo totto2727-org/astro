@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# History Extention
+.history/
+
+# MistCSS
+*.mist.tsx
+*.mist.astro
+*.mist.svelte
