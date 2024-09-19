@@ -1,0 +1,39 @@
+---
+import StarAstro from "icon:astro/my/star";
+import PhAirplaneTiltThinAstro from "icon:astro/ph/airplane-tilt-thin";
+import StarReact from "icon:react/my/star";
+import PhAirplaneTiltThinReact from "icon:react/ph/airplane-tilt-thin";
+import StarSvelte from "icon:svelte/my/star";
+import PhAirplaneTiltThinSvelte from "icon:svelte/ph/airplane-tilt-thin";
+import Layout from "#@/component/layout/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="flex flex-col gap-4 [&>*]-w-[fit-content] items-center justify-center p-10"
+  >
+    <div class="[&>*]-(flex gap-1 items-center)">
+      <p>Icontify</p>
+      <div>
+        <span>Astro:</span><PhAirplaneTiltThinAstro width={24} height={24} />
+      </div>
+      <div>
+        <span>React:</span><PhAirplaneTiltThinReact width={24} height={24} />
+      </div>
+      <div>
+        <span>Svelte:</span><PhAirplaneTiltThinSvelte width={24} height={24} />
+      </div>
+
+      <p>Custom</p>
+      <div>
+        <span>Astro:</span><StarAstro width={24} height={24} />
+      </div>
+      <div>
+        <span>React:</span><StarReact width={24} height={24} />
+      </div>
+      <div>
+        <span>Svelte:</span><StarSvelte width={24} height={24} />
+      </div>
+    </div>
+  </div>
+</Layout>
