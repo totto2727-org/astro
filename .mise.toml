@@ -1,2 +1,3 @@
 [tools]
 dprint = "0.47.2"
+"npm:npm-run-all2" = "6.2.2"

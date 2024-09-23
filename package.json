@@ -3,16 +3,22 @@
   "private": true,
   "scripts": {
     "dev:astro": "astro dev",
+    "$ TODO mistcss might be consolidated once the PR is merged": "",
+    "dev:mistcss": "run-p dev:mistcss:*",
     "dev:mistcss:react": "mistcss --target react ./src/component/atom --watch",
     "dev:mistcss:svelte": "mistcss --target svelte ./src/component/atom --watch",
     "dev:mistcss:astro": "mistcss --target astro ./src/component/atom --watch",
     "build:astro": "astro build",
-    "build:mistcss": "mistcss ./components",
+    "build:mistcss": "run-p build:mistcss:*",
+    "build:mistcss:react": "mistcss --target react ./src/component/atom",
+    "build:mistcss:svelte": "mistcss --target svelte ./src/component/atom",
+    "build:mistcss:astro": "mistcss --target astro ./src/component/atom",
     "fix:biome": "biome check --write --unsafe",
     "fix:dprint": "dprint fmt",
     "check:biome": "biome ci",
     "check:dprint": "dprint check",
     "check:astro": "astro check",
+    "check:svelte": "svelte-check",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -46,7 +52,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
     "@biomejs/biome": "^1.9.1",
-    "npm-run-all2": "^6.2.3",
     "svelte-check": "^4.0.2"
   }
 }
