@@ -1,0 +1,37 @@
+@scope (button.base-button) {
+  :scope {
+    @apply "p-[0.5em] rounded-[0.5em]";
+
+    &[data-variant="primary"] {
+      @apply "bg-blue-500 text-white";
+
+      &:hover {
+        @apply "bg-blue-600";
+      }
+
+      &:focus-visible {
+        @apply "bg-blue-800";
+      }
+
+      &:active {
+        @apply "bg-blue-900";
+      }
+    }
+
+    &[data-variant="secondary"] {
+      @apply "bg-orange-500 text-white";
+
+      &:hover {
+        @apply "bg-orange-600";
+      }
+
+      &:focus-visible {
+        @apply "bg-orange-800";
+      }
+
+      &:active {
+        @apply "bg-orange-900";
+      }
+    }
+  }
+}
