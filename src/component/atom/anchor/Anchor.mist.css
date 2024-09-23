@@ -1,21 +1,21 @@
 @scope (a.base-anchor) {
   :scope {
-    @apply "text-blue-500 underline";
+    --at-apply: "text-blue-500 underline";
 
     &:visited {
-      @apply "text-blue-600";
+      --at-apply: "text-blue-600";
     }
 
     &:hover {
-      @apply "text-blue-700";
+      --at-apply: "text-blue-700";
     }
 
     &:focus-visible {
-      @apply "text-blue-800";
+      --at-apply: "text-blue-800";
     }
 
     &:active {
-      @apply "text-blue-900";
+      --at-apply: "text-blue-900";
     }
   }
 }

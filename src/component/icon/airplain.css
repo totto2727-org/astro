@@ -1,3 +1,3 @@
 .icon-ph-airplane-tilt-thin {
-  @apply i-ph-airplane-tilt-thin w-6 h-6;
+  --at-apply: i-ph-airplane-tilt-thin w-6 h-6;
 }

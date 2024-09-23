@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 
 import node from "@astrojs/node";
@@ -12,6 +11,10 @@ import UnoCSS from "unocss/astro";
 import Icons from "unplugin-icons/vite";
 
 import mistcss from "unplugin-mistcss/astro";
+
+import browserslist from "browserslist";
+
+import { browserslistToTargets } from "lightningcss";
 
 import { customCollections } from "./icon";
 
@@ -30,6 +33,15 @@ export default defineConfig({
   ],
 
   vite: {
+    css: {
+      transformer: "lightningcss",
+      lightningcss: {
+        targets: browserslistToTargets(browserslist(">= 0.25%")),
+      },
+    },
+    build: {
+      cssMinify: "lightningcss",
+    },
     resolve: {
       alias: [
         { find: "icon:svelte", replacement: "~icons" },
