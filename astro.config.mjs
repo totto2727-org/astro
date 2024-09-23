@@ -11,13 +11,7 @@ import UnoCSS from "unocss/astro";
 
 import Icons from "unplugin-icons/vite";
 
-import { FileSystemIconLoader } from "unplugin-icons/loaders";
-
-const customCollections = {
-  my: FileSystemIconLoader("./public/icon", (svg) =>
-    svg.replace(/^<svg /, '<svg fill="currentColor" ')
-  ),
-};
+import { customCollections } from "./icon";
 
 export default defineConfig({
   output: "server",
@@ -40,12 +34,21 @@ export default defineConfig({
       Icons({
         compiler: "astro",
         customCollections,
+        // TODO: link unocss -> extraProperties
+        // https://github.com/unocss/unocss/issues/4084
+        // defaultStyle
       }),
       Icons({
         compiler: "svelte",
         customCollections,
+        // defaultStyle
       }),
-      Icons({ compiler: "jsx", jsx: "react", customCollections }),
+      Icons({
+        compiler: "jsx",
+        jsx: "react",
+        customCollections,
+        // defaultStyle
+      }),
     ],
   },
 });

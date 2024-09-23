@@ -1,9 +1,12 @@
 ---
-import StarAstro from "icon:astro/my/star";
+import "#@/component/icon/astro.css";
+import "#@/component/icon/airplain.css";
+
+import AstroAstro from "icon:astro/my/astro";
 import PhAirplaneTiltThinAstro from "icon:astro/ph/airplane-tilt-thin";
-import StarReact from "icon:react/my/star";
+import AstroReact from "icon:react/my/astro";
 import PhAirplaneTiltThinReact from "icon:react/ph/airplane-tilt-thin";
-import StarSvelte from "icon:svelte/my/star";
+import AstroSvelte from "icon:svelte/my/astro";
 import PhAirplaneTiltThinSvelte from "icon:svelte/ph/airplane-tilt-thin";
 import Layout from "#@/component/layout/Layout.astro";
 ---
@@ -23,16 +26,33 @@ import Layout from "#@/component/layout/Layout.astro";
       <div>
         <span>Svelte:</span><PhAirplaneTiltThinSvelte width={24} height={24} />
       </div>
+      <div>
+        <span>UnoCSS:</span><div class="i-ph-airplane-tilt-thin w-6 h-6" />
+      </div>
+      <div>
+        {
+          /**
+          * If @apply is used, the size must be set on the CSS side due to priority issues.
+          */
+        }
+        <span>UnoCSS(@apply):</span><div class="icon-ph-airplane-tilt-thin" />
+      </div>
 
-      <p>Custom</p>
+      <p class="pt-4">Custom</p>
       <div>
-        <span>Astro:</span><StarAstro width={24} height={24} />
+        <span>Astro:</span><AstroAstro width="1em" height="1em" />
       </div>
       <div>
-        <span>React:</span><StarReact width={24} height={24} />
+        <span>React:</span><AstroReact width="1em" height="1em" />
       </div>
       <div>
-        <span>Svelte:</span><StarSvelte width={24} height={24} />
+        <span>Svelte:</span><AstroSvelte width="1em" height="1em" />
+      </div>
+      <div>
+        <span>UnoCSS:</span><div class="i-my-astro" />
+      </div>
+      <div>
+        <span>UnoCSS(@apply):</span><div class="icon-astro" />
       </div>
     </div>
   </div>
