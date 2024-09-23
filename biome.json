@@ -9,7 +9,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["vender"]
+    "ignore": ["./vender"]
   },
   "formatter": {
     "enabled": false

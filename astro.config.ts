@@ -11,6 +11,8 @@ import UnoCSS from "unocss/astro";
 
 import Icons from "unplugin-icons/vite";
 
+import mistcss from "unplugin-mistcss/astro";
+
 import { customCollections } from "./icon";
 
 export default defineConfig({
@@ -20,7 +22,12 @@ export default defineConfig({
     mode: "standalone",
   }),
 
-  integrations: [svelte(), react(), UnoCSS({ injectReset: true })],
+  integrations: [
+    mistcss({ targets: ["react", "astro", "svelte"] }),
+    svelte(),
+    react(),
+    UnoCSS({ injectReset: true }),
+  ],
 
   vite: {
     resolve: {

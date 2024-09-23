@@ -40,7 +40,8 @@
     "tailwindcss": "^3.4.12",
     "typescript": "^5.6.2",
     "unocss": "^0.62.4",
-    "unplugin-icons": "^0.19.3"
+    "unplugin-icons": "^0.19.3",
+    "unplugin-mistcss": "workspace:^"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
