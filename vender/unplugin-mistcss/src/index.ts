@@ -3,10 +3,9 @@ import { createUnplugin } from "unplugin";
 import type { Options } from "./types";
 
 import fs from "node:fs";
-import fsPromises from "node:fs/promises";
-import path from "node:path";
 
-import { createFile, getExtension, parse } from "mistcss/core";
+import path from "node:path";
+import { createFile, createFiles, getExtension, parse } from "mistcss/core";
 
 type Extension = ".tsx" | ".astro" | ".svelte";
 type Target = "react" | "hono" | "astro" | "vue" | "svelte";
@@ -26,24 +25,63 @@ function parseTargets(targets: Target[]): [Target, Extension][] {
 
 export const unpluginFactory: UnpluginFactory<Options | undefined> = (
   options
-) => ({
-  name: "unplugin-mistcss",
-  enforce: "pre",
-  async watchChange(id, { event }) {
-    if (event === "create" || event === "update") {
-      const targets: [Target, Extension][] = parseTargets(
-        options?.targets ?? []
-      );
+) => {
+  const targets: [Target, Extension][] = parseTargets(options?.targets ?? []);
 
-      for (const [target, extension] of targets) {
-        const data = parse(fs.readFileSync(id, "utf8"));
-        createFile(data, id, target, extension);
+  let isBuild = false;
+
+  return {
+    name: "unplugin-mistcss",
+    enforce: "pre",
+    async buildStart() {
+      if (isBuild) return;
+
+      const files = fs.promises.glob(path.join("**/*.mist.css"));
+
+      const promises: Promise<unknown>[] = [];
+
+      for await (const file of files) {
+        const content = await fs.promises.readFile(file, "utf8");
+        const data = parse(content);
+        console.log(
+          "mistcss:",
+          "create",
+          path.relative(process.cwd(), file),
+          options?.targets ?? []
+        );
+        promises.push(createFiles(data, file, targets));
       }
-    } else {
-      // TODO delete files
-    }
-  },
-});
+
+      await Promise.all(promises);
+      isBuild = true;
+    },
+    async watchChange(id, { event }) {
+      if (!id.endsWith(".mist.css")) return;
+
+      if (event === "create" || event === "update") {
+        console.log(
+          "mistcss:",
+          "update",
+          path.relative(process.cwd(), id),
+          options?.targets ?? []
+        );
+
+        fs.promises
+          .readFile(id, "utf8")
+          .then((str) => {
+            return parse(str);
+          })
+          .then((data) => {
+            for (const [target, extension] of targets) {
+              createFile(data, id, target, extension);
+            }
+          });
+      } else {
+        // TODO delete files
+      }
+    },
+  };
+};
 
 export const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory);
 
