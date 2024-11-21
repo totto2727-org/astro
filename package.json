@@ -8,6 +8,7 @@
     "fix:dprint": "dprint fmt",
     "check:biome": "biome ci",
     "check:dprint": "dprint check",
+    "check:type": "tsc",
     "check:astro": "astro check",
     "check:svelte": "svelte-check",
     "preview": "astro preview",
