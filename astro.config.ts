@@ -16,6 +16,8 @@ import browserslist from "browserslist";
 
 import { browserslistToTargets } from "lightningcss";
 
+import { lightningcssVisitorScope } from "./lightningcss-visitor-scope";
+
 import { customCollections } from "./icon";
 
 export default defineConfig({
@@ -37,6 +39,8 @@ export default defineConfig({
       transformer: "lightningcss",
       lightningcss: {
         targets: browserslistToTargets(browserslist(">= 0.25%")),
+        // @ts-expect-error `visitor` Property is not published.
+        visitor: lightningcssVisitorScope,
       },
     },
     build: {

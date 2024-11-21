@@ -5,5 +5,5 @@
     "jsxImportSource": "react"
   },
   "include": ["**/*.svelte", "**/*.ts", "**/*.tsx", "**/*.astro"],
-  "exclude": ["dist"]
+  "exclude": ["dist", "vender"]
 }
