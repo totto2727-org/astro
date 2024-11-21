@@ -1,11 +1,9 @@
 {
-  "name": "astro-with-mistcss",
+  "name": "astro-best-practice",
   "private": true,
   "scripts": {
     "dev:astro": "astro dev",
-    "dev:mistcss": "mistcss --watch --target react --target svelte --target astro ./src/component/atom",
     "build:astro": "astro build",
-    "build:mistcss": "mistcss --target react --target svelte --target astro ./src/component/atom",
     "fix:biome": "biome check --write --unsafe",
     "fix:dprint": "dprint fmt",
     "check:biome": "biome ci",
@@ -24,7 +22,6 @@
     "@astrojs/node": "^8.3.3",
     "@astrojs/react": "^3.6.2",
     "@astrojs/svelte": "^5.7.1",
-    "@astrojs/tailwind": "^5.1.1",
     "@iconify-json/ph": "^1.2.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
@@ -35,19 +32,18 @@
     "astro": "^4.15.7",
     "browserslist": "^4.23.3",
     "lightningcss": "^1.27.0",
-    "mistcss": "workspace:^",
+    "npm-run-all2": "^7.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "svelte": "^4.2.19",
-    "tailwindcss": "^3.4.12",
     "typescript": "^5.6.2",
     "unocss": "^0.62.4",
-    "unplugin-icons": "^0.19.3",
-    "unplugin-mistcss": "workspace:^"
+    "unplugin-icons": "^0.19.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
     "@biomejs/biome": "^1.9.1",
+    "dprint": "^0.47.5",
     "svelte-check": "^4.0.2"
   }
 }

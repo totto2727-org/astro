@@ -1,0 +1,7 @@
+.icon-ph-airplane-tilt-thin {
+	--at-apply: i-ph-airplane-tilt-thin;
+
+	/* Due to priority issues, size must be set in the same class as the icon */
+	width: 1.5rem;
+	height: 1.5rem;
+}

@@ -1,9 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  },
-  "include": ["**/*.svelte", "**/*.ts", "**/*.tsx", "**/*.astro"],
-  "exclude": ["dist", "vender"]
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
+	},
+	"include": ["**/*.svelte", "**/*.ts", "**/*.tsx", "**/*.astro"],
+	"exclude": ["dist"]
 }

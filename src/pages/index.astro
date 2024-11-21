@@ -1,16 +1,14 @@
 ---
-import Layout from "#@/component/layout/Layout.astro";
-import { BaseAnchor } from "../component/atom/anchor/Anchor.mist";
+import Layout from "#@/feature/layout/Layout.astro"
 ---
 
 <Layout title="Astro with MistCSS">
-  <div
-    class="flex flex-col gap-4 [&>*]-w-[fit-content] items-center justify-center p-10"
-  >
-    <h1>Astro with MistCSS Samples</h1>
-    <ul class="flex flex-col gap-1 list-disc">
-      <li><BaseAnchor href="/button">Button</BaseAnchor></li>
-      <li><BaseAnchor href="/icon">Icon</BaseAnchor></li>
-    </ul>
-  </div>
+	<div
+		class="flex flex-col gap-4 [&>*]-w-[fit-content] items-center justify-center p-10"
+	>
+		<h1>Astro with MistCSS Samples</h1>
+		<ul class="flex flex-col gap-1 list-disc">
+			<li class="[&>a]:(text-blue-500 underline)"><a href="/icon">Icon</a></li>
+		</ul>
+	</div>
 </Layout>

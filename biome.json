@@ -1,26 +1,32 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main",
-    "root": "."
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": ["./vender"]
-  },
-  "formatter": {
-    "enabled": false
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
-  }
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignoreUnknown": true,
+		"ignore": ["**/pnpm-lock.yaml"]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"root": ".",
+		"defaultBranch": "main",
+		"useIgnoreFile": true
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"useEditorconfig": true
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded"
+		}
+	}
 }
